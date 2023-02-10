@@ -1,0 +1,2 @@
+<h1 class="text-center" style="color:white">This is the home component</h1>
+<h3 class="text-center" style="color:white" *ngIf="userService.getUser()"> Welcome {{userService.getUser()?.firstName}} {{userService.getUser()?.lastName}}!</h3>
