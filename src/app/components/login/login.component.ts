@@ -16,9 +16,9 @@ export class LoginComponent {
   login(email:string, password:string) {
     this.userService.login(email,password)
     .subscribe( (resp:HttpResponse<any>) => { 
-      this.userService.setUser(resp.body as UserResponse);
+      this.userService.setUser(Object.assign(this.userService.getUser(), resp.body));
       this.userService.setAuthorization(resp.headers.get('Authorization') as string)
-      console.log(this.userService.getUser()?.firstName);
+      console.log(this.userService.getUser().getFirstName());
     });
   }
 }

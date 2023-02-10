@@ -8,7 +8,7 @@ import { Observable, map, of } from 'rxjs';
 })
 export class UserService {
   private loginUrl: string = "http://localhost:8080/auth/login"
-  private user?: UserResponse;
+  private user = new UserResponse(0,"","","",false,false);
   private authorization?:string;
   
   httpOptions = {
